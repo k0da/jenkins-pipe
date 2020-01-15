@@ -1,7 +1,7 @@
 pipeline {
     agent {
       kubernetes {
-        label 'foo-bar'
+        label 'jenkins-slave'
         defaultContainer 'jnlp'
       }
     }
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+              sh 'env'
             }
         }
         stage('Deploy') {
