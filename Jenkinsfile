@@ -1,6 +1,10 @@
 pipeline {
-    agent any
-
+    agent {
+      kubernetes {
+        label 'foo-bar'
+        defaultContainer 'jnlp'
+      }
+    }
     stages {
         stage('Build') {
             steps {
